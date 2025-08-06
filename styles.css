@@ -1,0 +1,128 @@
+/* Custom CSS Styles for SkillCraft Technology Landing Page */
+
+/* Custom Color Variables */
+:root {
+    --honolulu-blue: #0077b6;
+    --pacific-cyan: #00b4d8;
+    --non-photo-blue: #90e0ef;
+    --light-cyan: #caf0f8;
+}
+
+/* Global Styles */
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navigation Bar Styles */
+#navbar {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#navbar.scrolled {
+    background-color: var(--honolulu-blue);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Transitions */
+section {
+    transition: opacity 0.5s ease;
+}
+
+/* Form Focus Styles */
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--pacific-cyan);
+    box-shadow: 0 0 0 2px rgba(0, 180, 216, 0.2);
+}
+
+/* Button Hover Effects */
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+/* Card Hover Effects */
+.service-card:hover, .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Menu Animation */
+#mobile-menu {
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+#mobile-menu.show {
+    max-height: 500px;
+    opacity: 1;
+}
+
+/* Mobile Menu Item Styles */
+.mobile-menu-item {
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.mobile-menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu-item:active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--pacific-cyan);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.mobile-menu-item:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+}
